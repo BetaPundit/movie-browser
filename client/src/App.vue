@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <!-- Navbar -->
+    <div>
+      <b-navbar toggleable="sm" type="dark" variant="dark" class="px-4">
+        <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+        <b-navbar-brand>Movie Browser</b-navbar-brand>
+      </b-navbar>
     </div>
     <router-view/>
   </div>

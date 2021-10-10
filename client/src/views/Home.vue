@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <b-container class="py-4">
+
+    <!-- Search bar -->
+    <b-form inline>
+      <b-form-input
+        id="search"
+        class="mb-2 mr-sm-2 mb-sm-0"
+        placeholder="Movie Name"
+      ></b-form-input>
+
+      <b-button variant="primary">Search</b-button>
+    </b-form>
+
+    <!-- Movie list -->
+    <b-section> 
+      
+    </b-section>
+  </b-container>
+
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default Vue.extend({
   name: 'Home',
   components: {
-    HelloWorld,
+
   },
 });
 </script>
+
