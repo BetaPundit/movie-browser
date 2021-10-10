@@ -1,33 +1,36 @@
 <template>
-  <div px-2 py-2>
-    <b-card :title=title :sub-title=release_date>
-        <b-card-text>
-        {{ overview }}
-        </b-card-text>
-        <a href="#" class="card-link">Read more</a>
+  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+    <b-card
+      :title="movie.title"
+      :sub-title="'released on: ' + movie.release_date"
+    >
+      <b-card-text>
+        {{ movie.overview }}
+      </b-card-text>
+      <a @click="route" class="card-link" style="cursor: pointer;">Read more</a>
     </b-card>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'MovieCard',
-  components: {
-
-  },
+  name: "MovieCard",
+  components: {},
   props: {
-    id: String,
-    title: String,
-    overview: String,
-    popularity: Number,
-    release_date: String
-  }
+    movie: Object,
+  },
+  methods: {
+    route() {
+      this.$router.push({
+        name: "Details",
+        // path: this.movie.id,
+        params: { id: this.movie.id, movie: this.movie },
+      });
+    },
+  },
 });
 </script>
 
-
-<style scoped>
-
-</style>
+<style scoped></style>
